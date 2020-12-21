@@ -111,7 +111,7 @@ def renew_book_librarian(request, pk):
     else:
         proposed_renewal_date = datetime.date.today() + datetime.timedelta(weeks=3)
         form = RenewBookForm(initial={'renewal_date': proposed_renewal_date})
-
+        # Model Based Form =>  RenewBookModelForm(initial={'due_back': proposed_renewal_date}
     context = {
         'form': form,
         'book_instance': book_instance,
